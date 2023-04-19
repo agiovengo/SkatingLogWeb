@@ -14,4 +14,8 @@ export class ApiService {
   public getExample(): Observable<any> {
     return this.http.get<any>(`${this.apiBaseUrl}/SkateLog`);
   }
+
+  public sendSkatingLogEntry(data: any): Observable<any> {
+    return this.http.post<any>(`${this.apiBaseUrl}/SkateLog`, data);
+  }
 }

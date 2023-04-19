@@ -1,0 +1,60 @@
+<p>skating-log-entry works!</p>
+
+<form [formGroup]="skatingLogEntryForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="entryId">Entry ID:</label>
+    <input id="entryId" type="number" formControlName="entryId">
+  </div>
+
+  <div>
+    <label for="entryDateTime">Entry Date Time:</label>
+    <input id="entryDateTime" type="datetime-local" formControlName="entryDateTime">
+  </div>
+
+  <div>
+    <label for="startDateTime">Start Date Time:</label>
+    <input id="startDateTime" type="datetime-local" formControlName="startDateTime">
+  </div>
+
+  <div>
+    <label for="stopDateTime">Stop Date Time:</label>
+    <input id="stopDateTime" type="datetime-local" formControlName="stopDateTime">
+  </div>
+
+  <div>
+    <label for="classificationId">Classification ID:</label>
+    <input id="classificationId" type="number" formControlName="classificationId">
+  </div>
+
+  <div>
+    <label for="subclassId">Subclass ID:</label>
+    <input id="subclassId" type="number" formControlName="subclassId">
+  </div>
+
+  <div>
+    <label for="locationId">Location ID:</label>
+    <input id="locationId" type="number" formControlName="locationId">
+  </div>
+
+  <div>
+    <label for="basicDescription">Basic Description:</label>
+    <input id="basicDescription" type="text" formControlName="basicDescription">
+  </div>
+
+  <div>
+    <label for="detailedDescription">Detailed Description:</label>
+    <textarea id="detailedDescription" formControlName="detailedDescription"></textarea>
+  </div>
+
+  <div>
+    <label for="freestyleLevel">Freestyle Level:</label>
+    <input id="freestyleLevel" type="number" formControlName="freestyleLevel">
+  </div>
+
+  <div>
+    <label for="danceLevel">Dance Level:</label>
+    <input id="danceLevel" type="number" formControlName="danceLevel">
+  </div>
+
+  <button type="submit" [disabled]="!skatingLogEntryForm.valid">Submit</button>
+</form>

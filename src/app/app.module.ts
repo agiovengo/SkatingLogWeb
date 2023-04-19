@@ -5,15 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './api.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SkatingLogEntryComponent } from './skating-log-entry/skating-log-entry.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SkatingLogEntryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [ApiService, HttpClientModule],
   bootstrap: [AppComponent]
