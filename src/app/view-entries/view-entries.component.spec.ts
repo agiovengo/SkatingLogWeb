@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SkatingLogEntryComponent } from './skating-log-entry.component';
+import { ViewEntriesComponent } from './view-entries.component';
 
 describe('SkatingLogEntryComponent', () => {
-  let component: SkatingLogEntryComponent;
-  let fixture: ComponentFixture<SkatingLogEntryComponent>;
+  let component: ViewEntriesComponent;
+  let fixture: ComponentFixture<ViewEntriesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SkatingLogEntryComponent ]
+      declarations: [ ViewEntriesComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SkatingLogEntryComponent);
+    fixture = TestBed.createComponent(ViewEntriesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -6,18 +6,31 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './api.service';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SkatingLogEntryComponent } from './skating-log-entry/skating-log-entry.component';
+import { AddEntryComponent } from './add-entry/add-entry.component';
+import { HomeComponent } from './home/home.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SkatingLogEntryComponent
+    AddEntryComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [ApiService, HttpClientModule],
   bootstrap: [AppComponent]

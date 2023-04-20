@@ -12,13 +12,5 @@ export class AppComponent implements OnInit {
   constructor(private apiService: ApiService) {}
 
   ngOnInit() {
-    this.apiService.getExample().subscribe(
-      (data) => {
-        console.log('API response:', data);
-      },
-      (error) => {
-        console.error('API error:', error);
-      }
-    );
   }
 }
