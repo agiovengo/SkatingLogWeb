@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ApiService } from '../api.service';
+import { IClassification, ILocation, ISubclass } from '../interfaces/iSkatingInterfaces';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-add-entry',
@@ -9,8 +10,48 @@ import { ApiService } from '../api.service';
 })
 export class AddEntryComponent implements OnInit {
   addEntryForm!: FormGroup;
+  locationList: ILocation[] = [];
+  classificationList: IClassification[] = [];
+  subclassList: ISubclass[] = [];
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService) {
+    this.getLocations();
+    this.getClassifications();
+    this.getSubclasses();
+  }
+
+  getLocations() {
+    this.apiService.getLocations().subscribe(
+      (data) => {
+        this.locationList = data;
+      },
+      (error) => {
+        console.error('API error in locationList:', error);
+      }
+    );
+  }
+
+  getClassifications() {
+    this.apiService.getClassifications().subscribe(
+      (data) => {
+        this.classificationList = data;
+      },
+      (error) => {
+        console.error('API error in classificationList:', error);
+      }
+    );
+  }
+
+  getSubclasses() {
+    this.apiService.getSubclasses().subscribe(
+      (data) => {
+        this.subclassList = data;
+      },
+      (error) => {
+        console.error('API error in subclassList:', error);
+      }
+    );
+  }
 
   ngOnInit(): void {
     this.createForm();
@@ -42,5 +83,11 @@ export class AddEntryComponent implements OnInit {
         // Handle error, e.g., display an error message
       });
     }
+  }
+
+  testLists() {
+    console.log("locationList: ", this.locationList);
+    console.log("clasificationList: ", this.classificationList);
+    console.log("subclassList: ", this.subclassList);
   }
 }

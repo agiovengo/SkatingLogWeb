@@ -2,11 +2,6 @@
   <mat-card-content>
     <form [formGroup]="addEntryForm" (ngSubmit)="onSubmit()" class="add-entry-form">
       <mat-form-field appearance="outline">
-        <mat-label>Entry Id</mat-label>
-        <input matInput id="entryId" type="number" formControlName="entryId">
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
         <mat-label>Entry Date Time</mat-label>
         <input matInput id="entryDateTime" type="datetime-local" formControlName="entryDateTime">
       </mat-form-field>
@@ -60,3 +55,5 @@
     </form>
   </mat-card-content>
 </mat-card>
+
+<button (click)="testLists()">TEST LISTS</button>
