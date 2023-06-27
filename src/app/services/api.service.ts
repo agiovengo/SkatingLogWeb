@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { IListContainer } from '../interfaces/iSkatingInterfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,10 @@ export class ApiService {
     return this.http.get<any>(`${this.apiBaseUrl}/GetSubclasses`);
   }
 
+  public getListContainer(): Observable<IListContainer> {
+    return this.http.get<IListContainer>(`${this.apiBaseUrl}/GetListContainer`);
+  }
+
   public sendSkatingLogEntry(data: any): Observable<any> {
     return this.http.post<any>(`${this.apiBaseUrl}/AddSkatingLogEntry`, data);
   }
@@ -34,4 +39,5 @@ export class ApiService {
   public sendSampleEntry(data: any): Observable<any> {
     return this.http.post<any>(`${this.apiBaseUrl}/AddSampleSkatingLogEntry`, data);
   }
+
 }

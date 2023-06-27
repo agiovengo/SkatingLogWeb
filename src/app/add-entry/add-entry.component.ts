@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { IClassification, ILocation, ISubclass } from '../interfaces/iSkatingInterfaces';
+import { ILevelState, IListContainer, ILocation, } from '../interfaces/iSkatingInterfaces';
 import { ApiService } from '../services/api.service';
+import { KeyValue } from '@angular/common';
 
 @Component({
   selector: 'app-add-entry',
@@ -10,45 +11,23 @@ import { ApiService } from '../services/api.service';
 })
 export class AddEntryComponent implements OnInit {
   addEntryForm!: FormGroup;
-  locationList: ILocation[] = [];
-  classificationList: IClassification[] = [];
-  subclassList: ISubclass[] = [];
+  levelStateList: ILevelState[] = [];
+  recordTypeList: KeyValue<number, string>[] = [];
+  locationList: KeyValue<number, string>[] = [];
 
   constructor(private apiService: ApiService) {
-    this.getLocations();
-    this.getClassifications();
-    this.getSubclasses();
+    this.getListContainer();
   }
 
-  getLocations() {
-    this.apiService.getLocations().subscribe(
-      (data) => {
-        this.locationList = data;
+  getListContainer() {
+    this.apiService.getListContainer().subscribe(
+      (data: IListContainer) => {
+        this.levelStateList = data.levelStates;
+        this.recordTypeList = data.recordTypes.map(x => ({key: x.id, value: x.description}));
+        this.locationList = data.locations.map(x => ({key: x.id, value: x.description}));
       },
       (error) => {
         console.error('API error in locationList:', error);
-      }
-    );
-  }
-
-  getClassifications() {
-    this.apiService.getClassifications().subscribe(
-      (data) => {
-        this.classificationList = data;
-      },
-      (error) => {
-        console.error('API error in classificationList:', error);
-      }
-    );
-  }
-
-  getSubclasses() {
-    this.apiService.getSubclasses().subscribe(
-      (data) => {
-        this.subclassList = data;
-      },
-      (error) => {
-        console.error('API error in subclassList:', error);
       }
     );
   }
@@ -59,8 +38,6 @@ export class AddEntryComponent implements OnInit {
 
   createForm(): void {
     this.addEntryForm = new FormGroup({
-      entryId: new FormControl('', Validators.required),
-      entryDateTime: new FormControl('', Validators.required),
       startDateTime: new FormControl('', Validators.required),
       stopDateTime: new FormControl('', Validators.required),
       classificationId: new FormControl('', Validators.required),
@@ -69,7 +46,7 @@ export class AddEntryComponent implements OnInit {
       basicDescription: new FormControl('', Validators.required),
       detailedDescription: new FormControl('', Validators.required),
       freestyleLevel: new FormControl('', Validators.required),
-      danceLevel: new FormControl('', Validators.required)
+      danceLevel: new FormControl('', Validators.required) 
     });
   }
 
@@ -87,7 +64,7 @@ export class AddEntryComponent implements OnInit {
 
   testLists() {
     console.log("locationList: ", this.locationList);
-    console.log("clasificationList: ", this.classificationList);
-    console.log("subclassList: ", this.subclassList);
+    console.log("clasificationList: ", this.levelStateList);
+    console.log("subclassList: ", this.recordTypeList);
   }
 }

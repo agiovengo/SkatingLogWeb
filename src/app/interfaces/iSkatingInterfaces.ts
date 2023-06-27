@@ -1,36 +1,27 @@
 export interface IEntryView {
-  basicDescription: string;
-  classification: IClassification;
-  danceLevel: number;
-  detailedDescription: string;
-  entryDateTime: Date;
-  entryId: number;
-  freestyleLevel: number;
-  location: ILocation;
   startDateTime: Date;
   stopDateTime: Date;
-  subclass: ISubclass;
+  recordType: string;
+  location: string;
+  basicDescription: string;
+  detailedDescription: string;
+  levelState: string;
+  onIce: string;
   totalTimeMinutes: number;
 }
 
-export interface IEntry {
-  basicDescription: string;
-  classificationId: number;
-  danceLevel: number;
-  detailedDescription: string;
-  entryDateTime: Date;
+export interface ILogEntry {
   entryId: number;
-  freestyleLevel: number;
+  createdDateTime: Date;
+  startDateTime: Date;
+  stopDateTime: Date;
+  recordTypeId: number;
   locationId: number;
-  startDateTime: Date;
-  stopDateTime: Date;
-  subclassId: number;
+  basicDescription: string;
+  detailedDescription: string;
+  levelStateId: number;
+  isOnIce: boolean;
   totalTimeMinutes: number;
-}
-
-export interface IClassification {
-  id: number;
-  description: string;
 }
 
 export interface ILocation {
@@ -38,7 +29,21 @@ export interface ILocation {
   description: string;
 }
 
-export interface ISubclass {
+export interface IRecordType {
   id: number;
   description: string;
+}
+
+export interface ILevelState {
+  id: number;
+  date: Date;
+  freestyleLevel: string;
+  danceLevel: string;
+  pairsLevel: string;
+}
+
+export interface IListContainer {
+ levelStates: ILevelState[];
+ recordTypes: IRecordType[];
+ locations: ILocation[];
 }

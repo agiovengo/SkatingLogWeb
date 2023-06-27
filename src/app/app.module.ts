@@ -7,7 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddEntryComponent } from './add-entry/add-entry.component';
 import { HomeComponent } from './home/home.component';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -16,6 +15,7 @@ import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { ViewEntriesComponent } from './view-entries/view-entries.component';
 import { ApiService } from './services/api.service';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,8 @@ import { ApiService } from './services/api.service';
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    CommonModule
+    CommonModule,
+    MatSelectModule
   ],
   providers: [ApiService, HttpClientModule],
   bootstrap: [AppComponent]

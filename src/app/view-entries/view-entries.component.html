@@ -4,32 +4,18 @@
   <thead>
     <tr>
       <th>Basic Description</th>
-      <th>Classification</th>
-      <th>Dance Level</th>
       <th>Detailed Description</th>
-      <th>Entry Date Time</th>
-      <th>Entry ID</th>
-      <th>Freestyle Level</th>
-      <th>Location</th>
       <th>Start Date Time</th>
       <th>Stop Date Time</th>
-      <th>Subclass</th>
       <th>Total Time (Minutes)</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let entry of entryData">
       <td>{{ entry.basicDescription }}</td>
-      <td>{{ entry.classification }}</td>
-      <td>{{ entry.danceLevel }}</td>
       <td>{{ entry.detailedDescription }}</td>
-      <td>{{ entry.entryDateTime }}</td>
-      <td>{{ entry.entryId }}</td>
-      <td>{{ entry.freestyleLevel }}</td>
-      <td>{{ entry.location }}</td>
       <td>{{ entry.startDateTime }}</td>
       <td>{{ entry.stopDateTime }}</td>
-      <td>{{ entry.subclass }}</td>
       <td>{{ entry.totalTimeMinutes }}</td>
     </tr>
   </tbody>
