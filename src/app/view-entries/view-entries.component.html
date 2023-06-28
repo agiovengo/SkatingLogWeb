@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>Basic Description</th>
+      <th>Detailed Description</th>
+      <th>Start Date Time</th>
+      <th>Stop Date Time</th>
+      <th>Total Time (Minutes)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let entry of entryData">
+      <td>{{ entry.basicDescription }}</td>
+      <td>{{ entry.detailedDescription }}</td>
+      <td>{{ entry.startDateTime }}</td>
+      <td>{{ entry.stopDateTime }}</td>
+      <td>{{ entry.totalTimeMinutes }}</td>
+    </tr>
+  </tbody>
+</table>
