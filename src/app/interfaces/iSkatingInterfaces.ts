@@ -24,6 +24,17 @@ export interface ILogEntry {
   totalTimeMinutes: number;
 }
 
+export interface IAddLogEntry
+{
+  startDateTime: Date;
+  stopDateTime: Date;
+  recordTypeId: number;
+  locationId: number;
+  basicDescription: string;
+  detailedDescription: string;
+  isOnIce: boolean;
+}
+
 export interface ILocation {
   id: number;
   description: string;

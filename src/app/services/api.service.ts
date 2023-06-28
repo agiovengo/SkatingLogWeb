@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IListContainer } from '../interfaces/iSkatingInterfaces';
+import { IAddLogEntry, IListContainer, ILogEntry } from '../interfaces/iSkatingInterfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -32,8 +32,8 @@ export class ApiService {
     return this.http.get<IListContainer>(`${this.apiBaseUrl}/GetListContainer`);
   }
 
-  public sendSkatingLogEntry(data: any): Observable<any> {
-    return this.http.post<any>(`${this.apiBaseUrl}/AddSkatingLogEntry`, data);
+  public addLogEntry(data: IAddLogEntry): Observable<any> {
+    return this.http.post<any>(`${this.apiBaseUrl}/AddLogEntry`, data);
   }
 
   public sendSampleEntry(data: any): Observable<any> {
