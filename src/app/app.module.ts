@@ -16,13 +16,15 @@ import { ViewEntriesComponent } from './view-entries/view-entries.component';
 import { ApiService } from './services/api.service';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { UserRegistrationComponent } from './user-registration/user-registration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddEntryComponent,
     ViewEntriesComponent,
-    HomeComponent
+    HomeComponent,
+    UserRegistrationComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IAddLogEntry, IListContainer, ILogEntry } from '../interfaces/iSkatingInterfaces';
+import { IAddLogEntry, IListContainer, ILogEntry, IUserRegistrationDto } from '../interfaces/iSkatingInterfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +9,7 @@ import { IAddLogEntry, IListContainer, ILogEntry } from '../interfaces/iSkatingI
 export class ApiService {
 
   private apiBaseUrl = 'https://localhost:7258/SkateLog';
+  private apiUserUrl = 'https://localhost:7258/User';
 
   constructor(private http: HttpClient) { }
 
@@ -40,4 +41,7 @@ export class ApiService {
     return this.http.post<any>(`${this.apiBaseUrl}/AddSampleSkatingLogEntry`, data);
   }
 
+  public registerUser(data: IUserRegistrationDto): Observable<any> {
+    return this.http.post<any>(`${this.apiUserUrl}/Register`, data);
+  }
 }
