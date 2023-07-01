@@ -67,3 +67,9 @@ export interface IUserRegistrationDto
   lastName: string;
   email: string;
 }
+
+export interface IUserLoginDto
+{
+  username: string;
+  password: string;
+}

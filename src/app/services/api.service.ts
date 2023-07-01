@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IAddLogEntry, IListContainer, ILogEntry, IUserRegistrationDto } from '../interfaces/iSkatingInterfaces';
+import { IAddLogEntry, IListContainer, ILogEntry, IUserLoginDto, IUserRegistrationDto } from '../interfaces/iSkatingInterfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -43,5 +43,9 @@ export class ApiService {
 
   public registerUser(data: IUserRegistrationDto): Observable<any> {
     return this.http.post<any>(`${this.apiUserUrl}/Register`, data);
+  }
+
+  public loginUser(data: IUserLoginDto): Observable<any> {
+    return this.http.post<any>(`${this.apiUserUrl}/Login`, data);
   }
 }
