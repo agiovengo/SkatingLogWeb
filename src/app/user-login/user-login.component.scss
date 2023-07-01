@@ -1,0 +1,42 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+form {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+
+  .form-group {
+      margin-bottom: 15px;
+
+      input {
+          padding: 10px;
+          border-radius: 3px;
+          border: 1px solid #ddd;
+          width: 100%;
+      }
+  }
+
+  button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+
+      &:disabled {
+          background-color: #ccc;
+          cursor: not-allowed;
+      }
+  }
+}
