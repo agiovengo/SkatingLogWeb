@@ -58,3 +58,18 @@ export interface IListContainer {
  recordTypes: IRecordType[];
  locations: ILocation[];
 }
+
+export interface IUserRegistrationDto
+{
+  username: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+}
+
+export interface IUserLoginDto
+{
+  username: string;
+  password: string;
+}
