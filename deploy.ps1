@@ -3,11 +3,7 @@ ng build --base-href /SkatingLogWeb/
 
 # Step 2: Create a new GitHub repository (already done)
 # Step 3: Initialize Git and add remote origin (already done)
-
-# Step 4: Commit and push the Angular project files
-git add .
-git commit -m "Initial commit"
-git push -u origin master
+# Step 4: Push your project to GitHub (already done)
 
 # Step 5: Configure GitHub Pages
 $repositoryUrl = "https://github.com/agiovengo/SkatingLogWeb.git"
@@ -32,15 +28,6 @@ $branchProtectionBody = @{
 
 Invoke-RestMethod -Uri "$githubApiUrl/repos/agiovengo/SkatingLogWeb/branches/main/protection" `
     -Method PUT -Headers $headers -Body ($branchProtectionBody | ConvertTo-Json)
-
-$pagesBody = @{
-    "source" = @{
-        "branch" = "main"
-        "path" = "/docs" # Change to the appropriate path if your project generates files in a different directory
-    }
-}
-
-Invoke-RestMethod -Uri $githubPagesUrl -Method POST -Headers $headers -Body ($pagesBody | ConvertTo-Json)
 
 # Step 6: Access your GitHub Pages site
 $githubPagesSiteUrl = "https://agiovengo.github.io/SkatingLogWeb/"
