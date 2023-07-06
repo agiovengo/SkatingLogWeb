@@ -1,5 +1,5 @@
 # Step 1: Build your Angular project
-ng build --prod --base-href /SkatingLogWeb/
+ng build --base-href /SkatingLogWeb/
 
 # Step 2: Create a new GitHub repository (already done)
 # Step 3: Initialize Git and add remote origin (already done)
