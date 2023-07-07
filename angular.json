@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "SkatingLogWeb": {
+    "skating-log-web": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref": "/SkatingLogWeb/",
+            "baseHref": "/skating-log-web/",
             "outputPath": "dist/skating-log-web",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -74,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "SkatingLogWeb:build:production"
+              "browserTarget": "skating-log-web:build:production"
             },
             "development": {
-              "browserTarget": "SkatingLogWeb:build:development"
+              "browserTarget": "skating-log-web:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -85,7 +85,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "SkatingLogWeb:build"
+            "browserTarget": "skating-log-web:build"
           }
         },
         "test": {
@@ -110,5 +110,5 @@
       }
     }
   },
-  "defaultProject": "SkatingLogWeb"
+  "defaultProject": "skating-log-web"
 }

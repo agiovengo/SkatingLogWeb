@@ -1,16 +1,16 @@
 # Step 1: Build your Angular project
-ng build --base-href /SkatingLogWeb/
+ng build --base-href /skating-log-web/
 
 # Step 2: Create a new GitHub repository (already done)
 # Step 3: Initialize Git and add remote origin (already done)
 # Step 4: Push your project to GitHub (already done)
 
 # Step 5: Configure GitHub Pages
-$repositoryUrl = "https://github.com/agiovengo/SkatingLogWeb.git"
+$repositoryUrl = "https://github.com/agiovengo/skating-log-web.git"
 $githubApiUrl = "https://api.github.com"
-$githubPagesUrl = "$githubApiUrl/repos/agiovengo/SkatingLogWeb/pages"
+$githubPagesUrl = "$githubApiUrl/repos/agiovengo/skating-log-web/pages"
 
-$token = "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"
+$token = "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"
 $headers = @{
     "Authorization" = "Bearer $token"
     "Content-Type" = "application/json"
@@ -26,11 +26,11 @@ $branchProtectionBody = @{
     "restrictions" = $null
 }
 
-Invoke-RestMethod -Uri "$githubApiUrl/repos/agiovengo/SkatingLogWeb/branches/main/protection" `
+Invoke-RestMethod -Uri "$githubApiUrl/repos/agiovengo/skating-log-web/branches/main/protection" `
     -Method PUT -Headers $headers -Body ($branchProtectionBody | ConvertTo-Json)
 
 # Step 6: Access your GitHub Pages site
-$githubPagesSiteUrl = "https://agiovengo.github.io/SkatingLogWeb/"
+$githubPagesSiteUrl = "https://agiovengo.github.io/skating-log-web/"
 
 Write-Host "Your Angular project is now hosted on GitHub Pages."
 Write-Host "You can access your site at: $githubPagesSiteUrl"
