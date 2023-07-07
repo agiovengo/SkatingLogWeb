@@ -8,8 +8,8 @@ import { IAddLogEntry, IListContainer, ILogEntry, IUserLoginDto, IUserRegistrati
 })
 export class ApiService {
 
-  private apiBaseUrl = 'https://localhost:7258/SkateLog';
-  private apiUserUrl = 'https://localhost:7258/User';
+  private apiBaseUrl = 'skatinglogapi.azurewebsites.net/SkateLog';
+  private apiUserUrl = 'skatinglogapi.azurewebsites.net/User';
 
   constructor(private http: HttpClient) { }
 
