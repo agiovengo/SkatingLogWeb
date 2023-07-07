@@ -10,7 +10,7 @@ $repositoryUrl = "https://github.com/agiovengo/SkatingLogWeb.git"
 $githubApiUrl = "https://api.github.com"
 $githubPagesUrl = "$githubApiUrl/repos/agiovengo/SkatingLogWeb/pages"
 
-$token = "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"
+$token = "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"
 $headers = @{
     "Authorization" = "Bearer $token"
     "Content-Type" = "application/json"
