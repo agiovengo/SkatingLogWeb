@@ -2,14 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IAddLogEntry, IListContainer, ILogEntry, IUserLoginDto, IUserRegistrationDto } from '../interfaces/iSkatingInterfaces';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  private apiBaseUrl = 'https://skatinglogapi.azurewebsites.net/SkateLog';
-  private apiUserUrl = 'https://skatinglogapi.azurewebsites.net/User'; 
+  private apiBaseUrl = environment.apiBaseUrl;
+  private apiUserUrl = environment.apiUserUrl; 
 
   constructor(private http: HttpClient) { }
 
