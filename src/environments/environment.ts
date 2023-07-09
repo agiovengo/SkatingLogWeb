@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'http://localhost:7258/SkateLog',
-  apiUserUrl: 'http://localhost:7258/User'
+  apiBaseUrl: 'https://localhost:7258/SkateLog',
+  apiUserUrl: 'https://localhost:7258/User'
 };
 
 /*
