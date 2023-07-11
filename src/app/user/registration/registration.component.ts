@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ApiService } from '../services/api.service';
-import { IUserRegistrationDto } from '../interfaces/iSkatingInterfaces';
+import { ApiService } from '../../services/api.service';
+import { IUserRegistrationDto } from '../../interfaces/iSkatingInterfaces';
 
 @Component({
-  selector: 'app-user-registration',
-  templateUrl: './user-registration.component.html',
-  styleUrls: ['./user-registration.component.scss']
+  selector: 'app-registration',
+  templateUrl: './registration.component.html',
+  styleUrls: ['./registration.component.scss']
 })
-export class UserRegistrationComponent {
+export class RegistrationComponent {
   registrationForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private apiService: ApiService) {

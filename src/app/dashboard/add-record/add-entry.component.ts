@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { IAddLogEntry, ILevelState, IListContainer, ILocation, ILogEntry, } from '../interfaces/iSkatingInterfaces';
-import { ApiService } from '../services/api.service';
+import { IAddLogEntry, ILevelState, IListContainer, ILocation, ILogEntry, } from '../../interfaces/iSkatingInterfaces';
+import { ApiService } from '../../services/api.service';
 import { KeyValue } from '@angular/common';
 
 @Component({

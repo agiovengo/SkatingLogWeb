@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { IEntryView } from '../interfaces/iSkatingInterfaces';
-import { ApiService } from '../services/api.service';
+import { IEntryView } from '../../interfaces/iSkatingInterfaces';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-view-entries',

@@ -73,3 +73,7 @@ export interface IUserLoginDto
   username: string;
   password: string;
 }
+
+export interface RouteData {
+  expectedRoles: string[];
+}

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { IAddLogEntry, IListContainer, ILogEntry, IUserLoginDto, IUserRegistrationDto } from '../interfaces/iSkatingInterfaces';
 import { environment } from 'src/environments/environment';
 
@@ -47,6 +47,8 @@ export class ApiService {
   }
 
   public loginUser(data: IUserLoginDto): Observable<any> {
-    return this.http.post<any>(`${this.apiUserUrl}/Login`, data);
+    return this.http.post<any>(`${this.apiUserUrl}/Login`, data).pipe(tap(res => {
+      localStorage.setItem('token', res.token);
+    }));
   }
 }
