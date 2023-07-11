@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ViewEntriesComponent } from './view-entries/view-entries.component';
-import { AddEntryComponent } from './add-entry/add-entry.component';
-import { HomeComponent } from './home/home.component';
-import { UserRegistrationComponent } from './user-registration/user-registration.component';
-import { UserLoginComponent } from './user-login/user-login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { RegistrationComponent } from './user/registration/registration.component';
+import { LoginComponent } from './user/login/login.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'view-entries', component: ViewEntriesComponent },
-  { path: 'add-entry', component: AddEntryComponent },
-  { path: 'user-registration', component: UserRegistrationComponent },
-  { path: 'user-login', component: UserLoginComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'registration', component: RegistrationComponent },
+  { 
+    path: 'dashboard', 
+    component: DashboardComponent, 
+    canActivate: [AuthGuard], 
+    data: { expectedRoles: ['User', 'Admin'] } 
+  },
 ];
 
 @NgModule({

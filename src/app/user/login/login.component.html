@@ -6,4 +6,5 @@
       <input type="password" name="password" [(ngModel)]="model.password" class="form-control" placeholder="Password" required>
   </div>
   <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">Login</button>
+  <button type="button" (click)="register()" class="btn btn-link">Register New User</button>
 </form>
